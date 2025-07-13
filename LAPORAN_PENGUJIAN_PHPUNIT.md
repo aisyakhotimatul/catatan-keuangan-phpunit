@@ -18,8 +18,6 @@
 - [Tabel Test Case](#8-tabel-test-case)
 - [Kesimpulan](#9-kesimpulan)
 - [Saran Pengembangan](#10-saran-pengembangan)
-- [Link Repository](#11-link-repository)
-
 
 
 
@@ -152,4 +150,10 @@ Menguji fitur hapus dan edit transaksi
 
 Menambahkan unit test untuk model dan controller
 
-## **11. Link Repository**
+---
+
+## ✍️ Dibuat oleh Kelompok 9
+
+- **Adzi Bilal Maulana H** – 22552011164  
+- **Aisya Khotimatul Aula** – 222101428
+
