@@ -2,40 +2,49 @@
 
 ## 1. Pendahuluan
 
-Aplikasi **Catatan Keuangan** merupakan sistem berbasis Laravel yang digunakan untuk mencatat transaksi harian pengguna, baik pemasukan maupun pengeluaran. Untuk memastikan aplikasi berjalan dengan baik dan sesuai fungsinya, dilakukan **pengujian otomatis menggunakan PHPUnit**. Pengujian ini penting untuk mendeteksi kesalahan (bug) lebih awal dan menjaga kestabilan sistem.
+Aplikasi **Catatan Keuangan** adalah sistem berbasis Laravel yang digunakan untuk mencatat transaksi keuangan harian, seperti pemasukan dan pengeluaran. Untuk memastikan aplikasi berjalan dengan benar dan stabil, dilakukan pengujian otomatis menggunakan **PHPUnit**. Pengujian ini dilakukan pada beberapa fitur inti untuk mengevaluasi keandalan sistem.
+
+---
 
 ## 2. Tujuan Pengujian
 
-- Memastikan halaman transaksi tidak bisa diakses oleh user yang belum login.
-- Memastikan user yang login dapat mengakses halaman transaksi.
-- Memastikan user dapat menambahkan data transaksi baru ke dalam database.
-- Memastikan integritas data tetap terjaga setelah proses insert transaksi.
+- Memastikan hanya user yang sudah login dapat mengakses halaman transaksi.
+- Memastikan user dapat menambahkan transaksi dengan data yang valid.
+- Memastikan guest (belum login) tidak bisa mengakses halaman transaksi.
+- Menjamin bahwa data berhasil tersimpan di database setelah transaksi ditambahkan.
 
-## 3. Tools yang Digunakan
+---
 
-| No | Tool / Library           | Keterangan                               |
-|----|--------------------------|-------------------------------------------|
-| 1  | Laravel 12               | Framework utama aplikasi                  |
-| 2  | PHPUnit (Built-in)       | Framework untuk testing                   |
-| 3  | Laravel TestCase         | Base class untuk pengujian feature/unit   |
-| 4  | RefreshDatabase          | Trait Laravel untuk reset database        |
-| 5  | UserFactory              | Untuk membuat data user palsu otomatis    |
+## 3. Tools dan Teknologi
 
-## 4. Struktur Pengujian
+| No | Tools / Library           | Keterangan                               |
+|----|---------------------------|-------------------------------------------|
+| 1  | Laravel 12                | Framework utama aplikasi                  |
+| 2  | PHPUnit (bawaan Laravel)  | Library pengujian otomatis                |
+| 3  | Laravel TestCase          | Class dasar untuk semua testing Laravel   |
+| 4  | UserFactory               | Digunakan untuk membuat data user dummy   |
+| 5  | RefreshDatabase           | Trait untuk reset database tiap pengujian |
+
+---
+
+## 4. Struktur File Pengujian
 
 File pengujian dibuat di:
+
 tests/Feature/TransactionTest.php
 
 php
 Salin
 Edit
 
-Pengujian difokuskan pada:
-- Akses halaman transaksi
-- Autentikasi user
-- Penambahan transaksi
+Test ditulis untuk:
+- Melarang guest akses `/transactions`
+- Membolehkan user login melihat `/transactions`
+- Membolehkan user menambah transaksi baru
 
-## 5. Implementasi Kode Test
+---
+
+## 5. Implementasi Kode Pengujian
 
 ```php
 <?php
@@ -61,9 +70,7 @@ class TransactionTest extends TestCase
     public function user_can_access_transactions()
     {
         $user = User::factory()->create();
-
         $response = $this->actingAs($user)->get('/transactions');
-
         $response->assertStatus(200);
     }
 
@@ -71,7 +78,6 @@ class TransactionTest extends TestCase
     public function user_can_create_transaction()
     {
         $user = User::factory()->create();
-
         $response = $this->actingAs($user)->post('/transactions', [
             'description' => 'Bayar Listrik',
             'amount' => 100000,
@@ -87,14 +93,15 @@ class TransactionTest extends TestCase
         ]);
     }
 }
-## **6. Hasil Pengujian**
-Pengujian dijalankan dengan perintah:
+## **6. Cara Menjalankan Pengujian**
+Jalankan pengujian menggunakan perintah berikut pada terminal:
 
 bash
 Salin
 Edit
 php artisan test
-Hasil:
+
+## **7. Hasil Pengujian**
 bash
 Salin
 Edit
@@ -104,21 +111,24 @@ PASS  Tests\Feature\TransactionTest
 ✓ user_can_create_transaction
 
 Tests: 3 passed (8 assertions)
+Seluruh pengujian berhasil, menunjukkan bahwa fitur utama aplikasi berjalan sesuai harapan.
 
-## **7. Tabel Test Case**
+## **8. Tabel Test Case**
 No	Nama Pengujian	Input / Aksi	Expected Output	Status
 1	guest_redirected_from_transactions	Akses /transactions tanpa login	Redirect ke /login	✅
 2	user_can_access_transactions	Login → akses /transactions	Status 200 OK, halaman transaksi tampil	✅
-3	user_can_create_transaction	Kirim POST data transaksi baru	Redirect + Data masuk ke database	✅
+3	user_can_create_transaction	POST data transaksi baru	Redirect + Data masuk ke database	✅
 
-## **8. Kesimpulan**
-Berdasarkan hasil pengujian otomatis menggunakan PHPUnit, seluruh fitur utama yang diuji berjalan dengan baik dan sesuai fungsinya. Proses autentikasi, akses halaman, dan penyimpanan data transaksi telah tervalidasi. Dengan adanya pengujian ini, aplikasi Catatan Keuangan menjadi lebih andal dan siap digunakan dalam lingkungan produksi.
+## **9. Kesimpulan**
+Pengujian otomatis dengan PHPUnit berhasil dilakukan untuk aplikasi Catatan Keuangan. Semua fitur inti yang diuji — termasuk akses halaman transaksi dan proses penambahan transaksi — berjalan dengan baik. Dengan hasil pengujian yang sukses, dapat disimpulkan bahwa aplikasi ini stabil dan dapat digunakan dengan aman.
 
-## **9. Saran Pengembangan**
-Menambahkan pengujian validasi form (input kosong, format tidak sesuai)
+## **10. Saran Pengembangan**
+Menambahkan pengujian validasi input (form kosong, angka negatif, dsb)
 
-Pengujian fitur export (PDF dan Excel)
+Menguji fitur export PDF/Excel
 
-Unit testing untuk model dan helper (jika ada)
+Menguji fitur hapus dan edit transaksi
 
-Pengujian skenario gagal login atau data tidak ditemukan
+Menambahkan unit test untuk model dan controller
+
+## **11. Link Repository**
