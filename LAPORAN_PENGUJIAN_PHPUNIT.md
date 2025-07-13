@@ -100,13 +100,7 @@ Jalankan pengujian menggunakan perintah berikut pada terminal:
 <pre> ```bash php artisan test ``` </pre>
 
 ## **7. Hasil Pengujian**
-bash
-Salin
-Edit
-PASS  Tests\Feature\TransactionTest
-✓ guest_redirected_from_transactions
-✓ user_can_access_transactions
-✓ user_can_create_transaction
+<pre> ```bash PASS Tests\Feature\TransactionTest ✓ guest_redirected_from_transactions ✓ user_can_access_transactions ✓ user_can_create_transaction Tests: 3 passed (8 assertions) ``` </pre>
 
 Tests: 3 passed (8 assertions)
 Seluruh pengujian berhasil, menunjukkan bahwa fitur utama aplikasi berjalan sesuai harapan.
