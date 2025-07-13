@@ -1,5 +1,13 @@
 # LAPORAN PENGUJIAN APLIKASI CATATAN KEUANGAN MENGGUNAKAN PHPUNIT
 
+## KELOMPOK 9
+**Adzi Bilal Maulana H** - 22552011164  
+**Aisya Khotimatul Aula** - 222101428
+
+---
+
+
+
 ## 1. Pendahuluan
 
 Aplikasi **Catatan Keuangan** adalah sistem berbasis Laravel yang digunakan untuk mencatat transaksi keuangan harian, seperti pemasukan dan pengeluaran. Untuk memastikan aplikasi berjalan dengan benar dan stabil, dilakukan pengujian otomatis menggunakan **PHPUnit**. Pengujian ini dilakukan pada beberapa fitur inti untuk mengevaluasi keandalan sistem.
