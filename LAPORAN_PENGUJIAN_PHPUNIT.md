@@ -1,10 +1,25 @@
 # LAPORAN PENGUJIAN APLIKASI CATATAN KEUANGAN MENGGUNAKAN PHPUNIT
 
 ## KELOMPOK 9
-**Adzi Bilal Maulana H** - 22552011164  
-**Aisya Khotimatul Aula** - 222101428
+**Adzi Bilal Maulana H** – 22552011164  
+**Aisya Khotimatul Aula** – 222101428
 
 ---
+
+## 📑 DAFTAR ISI
+
+- [Pendahuluan](#1-pendahuluan)
+- [Tujuan Pengujian](#2-tujuan-pengujian)
+- [Tools dan Teknologi](#3-tools-dan-teknologi)
+- [Struktur File Pengujian](#4-struktur-file-pengujian)
+- [Implementasi Kode Pengujian](#5-implementasi-kode-pengujian)
+- [Cara Menjalankan Pengujian](#6-cara-menjalankan-pengujian)
+- [Hasil Pengujian](#7-hasil-pengujian)
+- [Tabel Test Case](#8-tabel-test-case)
+- [Kesimpulan](#9-kesimpulan)
+- [Saran Pengembangan](#10-saran-pengembangan)
+- [Link Repository](#11-link-repository)
+
 
 
 
