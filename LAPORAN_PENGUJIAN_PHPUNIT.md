@@ -97,10 +97,7 @@ class TransactionTest extends TestCase
 ## **6. Cara Menjalankan Pengujian**
 Jalankan pengujian menggunakan perintah berikut pada terminal:
 
-bash
-Salin
-Edit
-php artisan test
+<pre> ```bash php artisan test ``` </pre>
 
 ## **7. Hasil Pengujian**
 bash
@@ -132,4 +129,4 @@ Menguji fitur hapus dan edit transaksi
 
 Menambahkan unit test untuk model dan controller
 
- **11. Link Repository**
+## **11. Link Repository**
