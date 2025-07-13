@@ -109,10 +109,13 @@ Tests: 3 passed (8 assertions)
 Seluruh pengujian berhasil, menunjukkan bahwa fitur utama aplikasi berjalan sesuai harapan.
 
 ## **8. Tabel Test Case**
-No	Nama Pengujian	Input / Aksi	Expected Output	Status
-1	guest_redirected_from_transactions	Akses /transactions tanpa login	Redirect ke /login	✅
-2	user_can_access_transactions	Login → akses /transactions	Status 200 OK, halaman transaksi tampil	✅
-3	user_can_create_transaction	POST data transaksi baru	Redirect + Data masuk ke database	✅
+
+| No | Nama Pengujian                    | Input / Aksi                         | Expected Output                             | Status |
+|----|----------------------------------|--------------------------------------|----------------------------------------------|--------|
+| 1  | guest_redirected_from_transactions | Akses `/transactions` tanpa login   | Redirect ke `/login`                         | ✅     |
+| 2  | user_can_access_transactions     | Login → akses `/transactions`       | Status 200 OK, halaman transaksi tampil      | ✅     |
+| 3  | user_can_create_transaction      | POST data transaksi baru            | Redirect + Data masuk ke database            | ✅     |
+
 
 ## **9. Kesimpulan**
 Pengujian otomatis dengan PHPUnit berhasil dilakukan untuk aplikasi Catatan Keuangan. Semua fitur inti yang diuji — termasuk akses halaman transaksi dan proses penambahan transaksi — berjalan dengan baik. Dengan hasil pengujian yang sukses, dapat disimpulkan bahwa aplikasi ini stabil dan dapat digunakan dengan aman.
