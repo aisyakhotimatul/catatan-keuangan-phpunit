@@ -93,7 +93,7 @@ class TransactionTest extends TestCase
         ]);
     }
 }
-## **6. Cara Menjalankan Pengujian**
+ **6. Cara Menjalankan Pengujian**
 Jalankan pengujian menggunakan perintah berikut pada terminal:
 
 bash
@@ -101,7 +101,7 @@ Salin
 Edit
 php artisan test
 
-## **7. Hasil Pengujian**
+ **7. Hasil Pengujian**
 bash
 Salin
 Edit
@@ -113,16 +113,16 @@ PASS  Tests\Feature\TransactionTest
 Tests: 3 passed (8 assertions)
 Seluruh pengujian berhasil, menunjukkan bahwa fitur utama aplikasi berjalan sesuai harapan.
 
-## **8. Tabel Test Case**
+ **8. Tabel Test Case**
 No	Nama Pengujian	Input / Aksi	Expected Output	Status
 1	guest_redirected_from_transactions	Akses /transactions tanpa login	Redirect ke /login	✅
 2	user_can_access_transactions	Login → akses /transactions	Status 200 OK, halaman transaksi tampil	✅
 3	user_can_create_transaction	POST data transaksi baru	Redirect + Data masuk ke database	✅
 
-## **9. Kesimpulan**
+ **9. Kesimpulan**
 Pengujian otomatis dengan PHPUnit berhasil dilakukan untuk aplikasi Catatan Keuangan. Semua fitur inti yang diuji — termasuk akses halaman transaksi dan proses penambahan transaksi — berjalan dengan baik. Dengan hasil pengujian yang sukses, dapat disimpulkan bahwa aplikasi ini stabil dan dapat digunakan dengan aman.
 
-## **10. Saran Pengembangan**
+**10. Saran Pengembangan**
 Menambahkan pengujian validasi input (form kosong, angka negatif, dsb)
 
 Menguji fitur export PDF/Excel
@@ -131,4 +131,4 @@ Menguji fitur hapus dan edit transaksi
 
 Menambahkan unit test untuk model dan controller
 
-## **11. Link Repository**
+ **11. Link Repository**
